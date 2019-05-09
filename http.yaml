@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: myapp
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    # Add to generate certificates for this ingress
+    kubernetes.io/tls-acme: 'true'
+spec:
+  rules:
+    - host: imvishalvyas.ml
+      http:
+        paths:
+          - backend:
+              serviceName: myapp
+              servicePort: 80
+            path: /
+  tls:
+    # With this configuration kube-lego will generate a secret in namespace foo called `example-tls`
+    # for the URL `www.example.com`
+    - hosts:
+        - "imvishalvyas.ml"
+      secretName: kube-lego-ssl
