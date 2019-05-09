@@ -1,4 +1,4 @@
-# Secure your kubernetes cluster with nginx ingress with TLS and LetsEncrypt.
+### Secure your kubernetes cluster with nginx ingress with TLS and LetsEncrypt.
 
 `Note` : Make sure you have intalled helm in your pc.
 
